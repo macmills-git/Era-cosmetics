@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-ivory: #F5F5F0;
+  --color-charcoal: #141414;
+  --color-gold: #C8A96A;
+  --color-nude: #E8E2D9;
+  --color-line: rgba(20, 20, 20, 0.1);
+
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-4xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply text-white font-sans antialiased selection:bg-white/30 min-h-screen;
+    background: linear-gradient(135deg, #0033A0 0%, #00CED1 100%);
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight text-white;
+  }
+}
+
+@layer components {
+  .grid-border-b {
+    @apply border-b border-line;
+  }
+  
+  .grid-border-r {
+    @apply border-r border-line;
+  }
+  
+  .micro-label {
+    @apply text-[10px] uppercase tracking-[0.2em] font-medium text-charcoal/50;
+  }
+  
+  .pill-button {
+    @apply px-8 py-3 bg-charcoal text-ivory rounded-full text-sm font-medium transition-all duration-300 hover:bg-charcoal/90 flex items-center gap-2;
+  }
+
+  .pill-button-outline {
+    @apply px-8 py-3 border border-charcoal text-charcoal rounded-full text-sm font-medium transition-all duration-300 hover:bg-charcoal hover:text-ivory flex items-center gap-2;
+  }
+}
+
+.glass-nav {
+  @apply backdrop-blur-md bg-ivory/70 border-b border-line;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-ivory;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal/10 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-charcoal/20;
+}
